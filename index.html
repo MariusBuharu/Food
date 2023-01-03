@@ -18,6 +18,8 @@
 
     <!-- my style -->
     <link rel="stylesheet" href="/styles/style.css" />
+    <!-- JS Script -->
+    <script defer src="./src/script.js"></script>
   </head>
   <body>
     <header>
@@ -37,7 +39,31 @@
       </nav>
     </header>
     <main id="hero">
-      <span id="hero-text">"Best Food <br> with<br> Best Products"</span>
+      <!-- <span id="hero-text">"Best Food <br> with<br> Best Products"</span> -->
+     <div id="arrow-left" class="arrow"></div>
+     <div id="slider">
+      <div class="slide slide0">
+        <div class="slide-content">
+          <span id="hero-text">"Best Food <br> with<br> Best Products"</span>
+        </div>
+      </div>
+      <div class="slide slide1">
+        <div class="slide-content">
+          <span>Image One</span>
+        </div>
+      </div>
+      <div class="slide slide2">
+        <div class="slide-content">
+          <span>Image Two</span>
+        </div>
+      </div>
+      <div class="slide slide3">
+        <div class="slide-content">
+          <span>Image Three</span>
+        </div>
+      </div>
+     </div>
+     <div id="arrow-right" class="arrow"></div>
     </main>
 
     <section id="about">
@@ -146,6 +172,110 @@
         </div>
       </div>
     </section>
+    <section class="section" id="section--2">
+      <div class="operations">
+        <div class="operations__tab-container">
+          <button class="btn operations__tab operations__tab--1 "data-tab="1">
+            Recipe Number 1
+          </button>
+          <button class="btn operations__tab operations__tab--2" data-tab="2">
+           Recipe Number 2
+          </button>
+          <button class="btn operations__tab operations__tab--3" data-tab="3">
+          Recipe Number 3
+          </button>
+          <button class="btn operations__tab operations__tab--4" data-tab="4">
+            Recipe Number 4
+            </button>
+            <button class="btn operations__tab operations__tab--4" data-tab="5">
+              Recipe Number 5
+              </button>
+        </div>
+        <div
+          class="operations__content operations__content--1 operations__content--active"
+        >
+          <div class="operations__icon operations__icon--1">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-upload"></use>
+            </svg>
+          </div>
+          <div class="recipeImg">
+            
+          </div>
+          <ul class="recipeIngredients">
+            
+          </ul>
+        </div>
+
+        <div class="operations__content operations__content--2">
+          <div class="operations__icon operations__icon--2">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-home"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Buy a home or make your dreams come true, with instant loans.
+          </h5>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </p>
+        </div>
+        <div class="operations__content operations__content--3">
+          <div class="operations__icon operations__icon--3">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-user-x"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            No longer need your account? No problem! Close it instantly.
+          </h5>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
+        </div>
+
+        <div class="operations__content operations__content--4">
+          <div class="operations__icon operations__icon--3">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-user-x"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            No longer need your account? No problem! Close it instantly.
+          </h5>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
+        </div>
+
+        <div class="operations__content operations__content--5">
+          <div class="operations__icon operations__icon--3">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-user-x"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            No longer need your account? No problem! Close it instantly.
+          </h5>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <p>
@@ -171,26 +301,47 @@
         <li>nisi eveniet, quas modi? Similique tenetur eum quibusdam</li>
         <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
      </ul>
-      <form id="contact-form">
+     <button class="btn-form">Get started</button>
+      <form class="contact-form hideForm">
          <label for="fName">First Name</label>
          <input type="text" id="fName" placeholder="First Name" name="fName">
+         <div class="error hide">Your First Name is required</div>
 
          <label for="lName">Last Name</label>
          <input type="text" id="lName" placeholder="Last Name" name="lName">
+         <div class="error hide">Your Last Name is required</div>
 
          <label for="email">Email</label>
          <input type="email" id="email" placeholder="example@example.com" name="email">
+         <div class="error hide">Your email address is not valid</div>
          
          <label for="subject">Subject</label>
          <input type="text" name="subject" id="subject" placeholder="Subject">
+         <div class="error hide">Subject is required</div>
           
          <label for="message">Message</label>
          <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
+         <div class="error hide">Message is required</div>
 
-         <button type="submit">Send</button>
+         <button class="submit" type="submit">Send</button>
+         <div class="modal hidden">
+          <button class="close-modal">&times;</button>
+          <h1>I'm a modal window 😍</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <div class="overlay hidden"></div>
       </form>
+      
     </section>
-
+   
     <footer>
         <div class="social-footer-links">
             <ul class="social">
