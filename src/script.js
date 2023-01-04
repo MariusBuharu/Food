@@ -1,19 +1,24 @@
 'use strict';
+//?Slider
+let current = 0;
 const sliderImages = document.querySelectorAll('.slide');
 const arrowLeft = document.querySelector('#arrow-left');
 const arrowRight = document.querySelector('#arrow-right');
 const form = document.querySelector('.contact-form');
 const btnForm = document.querySelector('.btn-form');
-let current = 0;
+//?Form
 const firstName = form.elements['fName'];
 const lastName = form.elements['lName'];
 const email = form.elements['email'];
 const subject = form.elements['subject'];
 const message = form.elements['message'];
 const btnSubmit = document.querySelector('.submit');
+//?Operations
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
+
+//!Form Validations
 firstName.isValid = () => firstName.value;
 lastName.isValid = () => lastName.value;
 email.isValid = () => isValidEmail(email.value);
@@ -52,6 +57,8 @@ const validateInputs = () => {
 };
 
 inputFields.forEach(input => input.addEventListener('input', validateInputs));
+
+//!Slide
 const startSlide = () => {
   reset();
   sliderImages[0].classList.remove('hide');
@@ -84,6 +91,8 @@ arrowRight.addEventListener('click', function () {
 
 startSlide();
 
+//!Show and close form
+
 btnForm.addEventListener('click', function () {
   form.classList.toggle('hideForm');
   if (form.classList.contains('hideForm')) {
@@ -92,6 +101,7 @@ btnForm.addEventListener('click', function () {
     btnForm.textContent = 'Close form';
   }
 });
+//?Modal
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
